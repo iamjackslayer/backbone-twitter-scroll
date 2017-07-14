@@ -50,7 +50,7 @@ var form = new Form();
 var TwitterWidget = Backbone.View.extend({
 	el:'.twitter-widget',
 	className: 'col-md-12',
-	template: $('#template'),
+	template: _.template($('#template').html()),
 	collection: tweets,
 	initialize: function(){
 		this.isLoading = false;
@@ -60,7 +60,7 @@ var TwitterWidget = Backbone.View.extend({
 		this.loadResults();
 	},
 	loadResults: function(){
-		$(this.el).find('ul').append(_.template(this.template.html(),{tweets: tweets.models}));
+		$(this.el).find('ul').append(this.template({tweets: tweets}));
 	},
 	events:{
 		'scroll':'checkScroll'
@@ -74,6 +74,8 @@ var TwitterWidget = Backbone.View.extend({
 		}
 	}
 });
+
+var viewList = new TwitterWidget();
 
 
 // Router---------------------------------------------------------------------------------
