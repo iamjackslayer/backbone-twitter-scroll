@@ -4,7 +4,7 @@
 // Collection
 var  Tweets = Backbone.Collection.extend({
 	url: function(){
-		return ''
+		return 'http://'
 	}
 });
 
