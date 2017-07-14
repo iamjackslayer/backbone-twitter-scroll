@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
 		  config.access_token = '2925112608-EtrVoSRCKK2pHTxCTu2S8sKZXbiJ1O45p5PQVfR'
 		  config.access_token_secret = 'OPcK8sjXWq6lERiL6vsuTpHoDwSQ1qOBpOqW9vrC8ZmB2'
 		end
-		@tweets = client.user_timeline('rubyinside',count: 20) 
+		@tweets = client.user_search('rubyinside') 
 	end
 
 	def search
@@ -16,7 +16,10 @@ class StaticPagesController < ApplicationController
 		  config.access_token = '2925112608-EtrVoSRCKK2pHTxCTu2S8sKZXbiJ1O45p5PQVfR'
 		  config.access_token_secret = 'OPcK8sjXWq6lERiL6vsuTpHoDwSQ1qOBpOqW9vrC8ZmB2'
 		end
-		@tweets = client.user_timeline('rubyinside',count: 20)
+
+		query = params[:query]
+		page  = params[:page]
+		@tweets = client.user_search(query)
 
 		render json: @tweets
 	end
