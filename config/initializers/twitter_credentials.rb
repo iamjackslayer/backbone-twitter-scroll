@@ -1,6 +1,6 @@
 require 'twitter'
 
-client = Twitter::REST::Client do |config|
+client = Twitter::REST::Client.new do |config|
   config.consumer_key = '2ata698MwiwPUAMxXg2Na99c1'
   config.consumer_secret = 'MC3UuF6OA8WkJjORxfqSEQVlEVs5TGlUwzHkDRI4UX5yotQz5n'
   config.access_token = '2925112608-EtrVoSRCKK2pHTxCTu2S8sKZXbiJ1O45p5PQVfR'
