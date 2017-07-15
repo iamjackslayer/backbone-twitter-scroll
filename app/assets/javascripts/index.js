@@ -1,8 +1,8 @@
 // change underscore syntax
-_.templateSettings = {
-  interpolate: /\{\{\=(.+?)\}\}/g,
-  evaluate: /\{\{(.+?)\}\}/g
-};
+// _.templateSettings = {
+//   interpolate: /\{\{\=(.+?)\}\}/g,
+//   evaluate: /\{\{(.+?)\}\}/g
+// };
 $(document).ready(function{
 
 console.log("Load ");
