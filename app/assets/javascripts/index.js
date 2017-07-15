@@ -66,7 +66,6 @@ var Form = Backbone.View.extend({
 	events: {
 		'click .btn':function(e){
 			this.request();
-			this.clearViewList();
 			this.test();
 		}
 	},
@@ -77,9 +76,6 @@ var Form = Backbone.View.extend({
 		query.set({input: queryInput});
 		query.page = 1;
 		query.request();
-	},
-	clearViewList: function(){
-		$(viewList.el).html("");
 	},
 	test: function(){
 		console.log("test event activated");
