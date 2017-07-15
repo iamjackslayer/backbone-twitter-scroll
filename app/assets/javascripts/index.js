@@ -32,9 +32,13 @@ var Query = Backbone.Model.extend({
 			type: 'get',
 			dataType: 'json',
 			success: function(resp){
+				console.log("success")
 				tweets.add(resp);
 				viewList.isLoading = false;
-			} 
+			} ,
+			error: function(){
+				console.log("ajax error :)");
+			}
 		});
 	}
 });
@@ -65,7 +69,6 @@ var Form = Backbone.View.extend({
 		query.set({input: queryInput});
 		query.page = 1;
 		query.request();
-		return false;
 	},
 	clearViewList: function(){
 		$(viewList.el).html("");
