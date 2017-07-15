@@ -35,10 +35,8 @@ var Query = Backbone.Model.extend({
 			success: function(resp){
 				console.log("success");
 				console.log(resp);
-				var itemsAttr = resp.map(function(item){
-					return item.attributes;
-				});
-				tweets.add(itemsAttr);
+				
+				tweets.add(resp);
 				viewList.isLoading = false;
 			},
 			error: function(){
