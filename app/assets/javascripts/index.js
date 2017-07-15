@@ -34,7 +34,10 @@ var Query = Backbone.Model.extend({
 			dataType: 'json',
 			success: function(resp){
 				console.log("success")
-				tweets.add(resp);
+				var itemsAttr = resp.map(function(item){
+					return item.attributes;
+				};
+				tweets.add(itemsAttr);
 				viewList.isLoading = false;
 			},
 			error: function(){
@@ -98,7 +101,7 @@ var TwitterWidget = Backbone.View.extend({
 		this.loadResults();
 	},
 	loadResults: function(){
-		$(this.el).find('ul').append(this.template({tweets: this.collection}));
+		$(this.el).find('ul').append(this.template({tweets: this.collection.models.description}));
 	},
 	events:{
 		'scroll':'checkScroll'
