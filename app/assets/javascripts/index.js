@@ -33,7 +33,8 @@ var Query = Backbone.Model.extend({
 			type: 'get',
 			dataType: 'json',
 			success: function(resp){
-				console.log("success")
+				console.log("success");
+				console.log(resp);
 				var itemsAttr = resp.map(function(item){
 					return item.attributes;
 				});
