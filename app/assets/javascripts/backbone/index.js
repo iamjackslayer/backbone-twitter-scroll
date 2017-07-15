@@ -39,7 +39,7 @@ var Form = Backbone.View.extend({
 	},
 	request: function(){
 		var queryInput = $(this.el).find('#search').val();
-
+		console.log(queryInput);
 		query.set({input: queryInput});
 		query.page = 1;
 		query.request();
