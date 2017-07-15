@@ -15,6 +15,7 @@ var Query = Backbone.Model.extend({
 			dataType: 'json',
 			success: function(resp){
 				tweets.add(resp);
+				viewList.isLoading = false;
 			} 
 		});
 	}
@@ -35,7 +36,8 @@ var tweets = new Tweet();
 var Form = Backbone.View.extend({
 	el:'#inputForm',
 	events: {
-		'click button':'request'
+		'click button':'request',
+		'click button':'clearViewList'
 	},
 	request: function(){
 		var queryInput = $(this.el).find('#search').val();
@@ -43,6 +45,10 @@ var Form = Backbone.View.extend({
 		query.set({input: queryInput});
 		query.page = 1;
 		query.request();
+		return false;
+	},
+	clearViewList: function(){
+		$(viewList.el).html("");
 	}
 });
 var form = new Form();
@@ -69,6 +75,7 @@ var TwitterWidget = Backbone.View.extend({
 	checkScroll: function(){
 		var triggerPoint = 100;
 		if(!this.isLoading && this.el.scrollTop + this.el.clientHeight + triggerPoint > this.el.scrollHeight){
+			this.isLoading = true;
 			query.page += 1;
 			query.request();
 			this.loadResults();
