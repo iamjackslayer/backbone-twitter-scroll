@@ -27,8 +27,9 @@ var Query = Backbone.Model.extend({
 		page: 1
 	},
 	request: function(){
+		var that = this;
 		$.ajax({
-			url: 'https://nameless-spire-43337.herokuapp.com/static_pages/search/' + this.input + '/' + this.page,
+			url: 'https://nameless-spire-43337.herokuapp.com/static_pages/search/' + that.input + '/' + that.page,
 			type: 'get',
 			dataType: 'json',
 			success: function(resp){
