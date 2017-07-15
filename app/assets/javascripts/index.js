@@ -3,6 +3,8 @@ _.templateSettings = {
   interpolate: /\{\{\=(.+?)\}\}/g,
   evaluate: /\{\{(.+?)\}\}/g
 };
+$(document).ready(function{
+
 console.log("Load ");
 // Model---------------------------------------------------------------------------------
 var Tweet = Backbone.Model.extend({
@@ -67,7 +69,7 @@ var form = new Form();
 var TwitterWidget = Backbone.View.extend({
 	el:'.twitter-widget',
 	className: 'col-md-12',
-	template: _.template($('#template')),
+	template: _.template($('#template').html()),
 	collection: tweets,
 	initialize: function(){
 		this.isLoading = false;
@@ -98,3 +100,4 @@ var viewList = new TwitterWidget();
 
 // Router---------------------------------------------------------------------------------
 console.log("end");
+});
