@@ -67,7 +67,7 @@ var form = new Form();
 var TwitterWidget = Backbone.View.extend({
 	el:'.twitter-widget',
 	className: 'col-md-12',
-	template: _.template($('#template').html()),
+	template: _.template($('#template')),
 	collection: tweets,
 	initialize: function(){
 		this.isLoading = false;
