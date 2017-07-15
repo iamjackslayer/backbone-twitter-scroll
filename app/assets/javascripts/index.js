@@ -36,7 +36,7 @@ var Query = Backbone.Model.extend({
 				console.log("success")
 				var itemsAttr = resp.map(function(item){
 					return item.attributes;
-				};
+				});
 				tweets.add(itemsAttr);
 				viewList.isLoading = false;
 			},
