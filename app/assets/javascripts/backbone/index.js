@@ -37,7 +37,8 @@ var Form = Backbone.View.extend({
 	el:'#inputForm',
 	events: {
 		'click .btn':'request',
-		'click .btn':'clearViewList'
+		'click .btn':'clearViewList',
+		'click .btn':'test'
 	},
 	request: function(){
 		var queryInput = $(this.el).find('#search').val();
@@ -50,6 +51,9 @@ var Form = Backbone.View.extend({
 	},
 	clearViewList: function(){
 		$(viewList.el).html("");
+	},
+	test: function(){
+		console.log("test event activated");
 	}
 });
 var form = new Form();
@@ -68,7 +72,7 @@ var TwitterWidget = Backbone.View.extend({
 		this.loadResults();
 	},
 	loadResults: function(){
-		$(this.el).find('ul').append(this.template({tweets: tweets}));
+		$(this.el).find('ul').append(this.template({tweets: this.collection}));
 	},
 	events:{
 		'scroll':'checkScroll'
