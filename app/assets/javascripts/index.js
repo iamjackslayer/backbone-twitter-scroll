@@ -3,7 +3,7 @@
 //   interpolate: /\{\{\=(.+?)\}\}/g,
 //   evaluate: /\{\{(.+?)\}\}/g
 // };
-$(document).ready(function{
+$(document).ready(function(){
 
 console.log("Load ");
 // Model---------------------------------------------------------------------------------
