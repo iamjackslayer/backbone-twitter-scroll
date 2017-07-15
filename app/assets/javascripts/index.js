@@ -51,7 +51,7 @@ var Tweets = Backbone.Collection.extend({
 	model: Tweet
 });
 
-tweets = new Tweet();
+tweets = new Tweets();
 
 
 // View ---------------------------------------------------------------------------------
