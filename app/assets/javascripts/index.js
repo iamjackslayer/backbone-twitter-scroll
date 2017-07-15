@@ -62,9 +62,11 @@ tweets = new Tweets();
 var Form = Backbone.View.extend({
 	el:'#inputForm',
 	events: {
-		'click .btn':'request',
-		'click .btn':'clearViewList',
-		'click .btn':'test'
+		'click .btn':function(e){
+			this.request();
+			this.clearViewList();
+			this.test();
+		}
 	},
 	request: function(){
 		var queryInput = $(this.el).find('#search').val();
