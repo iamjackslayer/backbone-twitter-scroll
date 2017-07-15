@@ -11,7 +11,7 @@ var Query = Backbone.Model.extend({
 	request: function(){
 		$.ajax({
 			url: '/static_pages/search/' + this.input + '/' + this.page,
-			method: 'get',
+			type: 'get',
 			dataType: 'json',
 			success: function(resp){
 				tweets.add(resp);
