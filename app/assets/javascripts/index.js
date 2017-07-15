@@ -3,6 +3,17 @@
 //   interpolate: /\{\{\=(.+?)\}\}/g,
 //   evaluate: /\{\{(.+?)\}\}/g
 // };
+
+// Model
+var tweet;
+var query;
+// COllection
+var tweets;
+// view
+var form;
+var viewList;
+
+
 $(document).ready(function(){
 
 console.log("Load ");
@@ -28,14 +39,14 @@ var Query = Backbone.Model.extend({
 	}
 });
 
-var query = new Query();
+query = new Query();
 
 // Collection---------------------------------------------------------------------------------
 var Tweets = Backbone.Collection.extend({
 	model: Tweet
 });
 
-var tweets = new Tweet();
+tweets = new Tweet();
 
 
 // View ---------------------------------------------------------------------------------
@@ -63,7 +74,7 @@ var Form = Backbone.View.extend({
 		console.log("test event activated");
 	}
 });
-var form = new Form();
+form = new Form();
 
 // results
 var TwitterWidget = Backbone.View.extend({
@@ -95,7 +106,7 @@ var TwitterWidget = Backbone.View.extend({
 	}
 });
 
-var viewList = new TwitterWidget();
+viewList = new TwitterWidget();
 
 
 // Router---------------------------------------------------------------------------------
