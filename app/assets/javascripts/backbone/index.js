@@ -33,7 +33,7 @@ var tweets = new Tweet();
 // View ---------------------------------------------------------------------------------
 // form
 var Form = Backbone.View.extend({
-	el:'.form-group',
+	el:'#inputForm',
 	events: {
 		'click button':'request'
 	},
