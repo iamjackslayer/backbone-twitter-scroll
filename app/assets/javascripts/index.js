@@ -36,9 +36,12 @@ var Query = Backbone.Model.extend({
 				console.log("success")
 				tweets.add(resp);
 				viewList.isLoading = false;
-			} ,
+			},
 			error: function(){
 				console.log("ajax error :)");
+			},
+			complete: function(){
+				console.log("completed ajax request yo");
 			}
 		});
 	}
