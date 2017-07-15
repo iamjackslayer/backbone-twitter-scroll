@@ -1,3 +1,8 @@
+// change underscore syntax
+_.templateSettings = {
+  interpolate: /\{\{\=(.+?)\}\}/g,
+  evaluate: /\{\{(.+?)\}\}/g
+};
 console.log("Load ");
 // Model---------------------------------------------------------------------------------
 var Tweet = Backbone.Model.extend({
