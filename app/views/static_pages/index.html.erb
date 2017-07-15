@@ -10,15 +10,15 @@
 		</div>
 
 		<div class="twitter-widget">
+			<ul>
 			
 			
+			</ul>
 		</div>
 		<script type="text/template" id="template">
-			<ul>
 				{{ _.each(tweets,function(tweet){ }}
-					<li>{{= tweet.description }}</li>
+					<li>{{= tweet.attributes.description }}</li>
 				{{ }) }}
-			</ul>
 		</script>
 	</div>
 </section>
