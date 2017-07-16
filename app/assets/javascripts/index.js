@@ -121,7 +121,6 @@ var TwitterWidget = Backbone.View.extend({
 
 viewList = new TwitterWidget();
 
-windowView = new WindowView();
 
 // Router---------------------------------------------------------------------------------
 console.log("end");
