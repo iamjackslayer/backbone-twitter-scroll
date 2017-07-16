@@ -96,7 +96,9 @@ var TwitterWidget = Backbone.View.extend({
 	initialize: function(){
 		this.isLoading = false;
 		this.listenTo(this.collection,'reset',this.loadResults);
-		this.listenTo(windowView,'scroll',this.checkScroll);
+		$('window').on('scroll',function(){
+			this.checkScroll();
+		}.bind(this));
 	},
 	render: function(){
 		this.loadResults();
@@ -119,9 +121,6 @@ var TwitterWidget = Backbone.View.extend({
 
 viewList = new TwitterWidget();
 
-var WindowView = Backbone.View.extend({
-	el: 'window'
-});
 windowView = new WindowView();
 
 // Router---------------------------------------------------------------------------------
