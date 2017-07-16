@@ -92,8 +92,8 @@ var Form = Backbone.View.extend({
 			this.clearList();
 
 			// Spinner and viewList
-			viewList.isLoading = false;
-			loadingSpinner.hide();
+			viewList.isLoading = true;
+			loadingSpinner.show();
 		}
 	},
 	request: function(){
