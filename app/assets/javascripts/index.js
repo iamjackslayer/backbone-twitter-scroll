@@ -80,7 +80,7 @@ var Form = Backbone.View.extend({
 		query.request();
 	},
 	clearList: function(){
-		$(viewList.el).find('ul').html("");
+		$(viewList.el).html("");
 	},
 	test: function(){
 		console.log("test event activated");
@@ -105,7 +105,7 @@ var TwitterWidget = Backbone.View.extend({
 	},
 	loadResults: function(){
 		console.log("data appended to the template");
-		$(this.el).find('a').append(this.template({tweets: this.collection.models}));
+		$(this.el).append(this.template({tweets: this.collection.models}));
 	},
 	checkScroll: function(){
 		console.log("scrolling.....................................................");
