@@ -112,7 +112,7 @@ var TwitterWidget = Backbone.View.extend({
 		var triggerPoint = 100;
 		if(!this.isLoading && this.el.scrollTop + this.el.clientHeight + triggerPoint > this.el.scrollHeight){
 			this.isLoading = true;
-			query.page += 1;
+			query.attributes.page += 1;
 			query.request();
 			this.loadResults();
 		}
