@@ -44,6 +44,8 @@ var Query = Backbone.Model.extend({
 			},
 			complete: function(){
 				console.log("completed ajax request yo");
+				// submit button
+				$('#butt').prop({'disabled':'false'});
 				// spinner and viewList
 				viewList.isLoading = false;
 				loadingSpinner.hide();
@@ -96,6 +98,7 @@ var Form = Backbone.View.extend({
 	},
 	request: function(){
 		var queryInput = $(this.el).find('#search').val();
+		$('#butt').prop({'disabled':'disabled'});
 		console.log(queryInput);
 		console.log('submitted request');
 		query.set({input: queryInput});
