@@ -38,13 +38,15 @@ var Query = Backbone.Model.extend({
 				console.log(resp);
 				
 				tweets.reset(resp);
-				viewList.isLoading = false;
 			},
 			error: function(){
 				console.log("ajax error :)");
 			},
 			complete: function(){
 				console.log("completed ajax request yo");
+				// spinner and viewList
+				viewList.isLoading = false;
+				loadingSpinner.hide();
 			}
 		});
 	}
@@ -86,6 +88,10 @@ var Form = Backbone.View.extend({
 			this.request();
 			this.test();
 			this.clearList();
+
+			// Spinner and viewList
+			viewList.isLoading = false;
+			loadingSpinner.hide();
 		}
 	},
 	request: function(){
@@ -129,6 +135,7 @@ var TwitterWidget = Backbone.View.extend({
 		var triggerPoint = 100;
 		if(!this.isLoading && this.el.scrollTop + this.el.clientHeight + triggerPoint > this.el.scrollHeight){
 			this.isLoading = true;
+			loadingSpinner.show();
 			query.attributes.page += 1;
 			query.request();
 			this.loadResults();
@@ -138,12 +145,6 @@ var TwitterWidget = Backbone.View.extend({
 
 viewList = new TwitterWidget();
 
-// connecting loadingSpinner and viewLIst
-if(viewList.isLoading){
-	loadingSpinner.show();
-}else{
-	loadingSpinner.hide();
-}
 
 
 // Router---------------------------------------------------------------------------------
