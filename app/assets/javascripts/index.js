@@ -36,7 +36,7 @@ var Query = Backbone.Model.extend({
 				console.log("success");
 				console.log(resp);
 				
-				tweets.add(resp);
+				tweets.reset(resp);
 				viewList.isLoading = false;
 			},
 			error: function(){
