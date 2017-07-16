@@ -45,7 +45,7 @@ var Query = Backbone.Model.extend({
 			complete: function(){
 				console.log("completed ajax request yo");
 				// submit button
-				$('#butt').prop({'disabled':'false'});
+				$('#butt').prop({'disabled':false});
 				// spinner and viewList
 				viewList.isLoading = false;
 				loadingSpinner.hide();
@@ -98,7 +98,7 @@ var Form = Backbone.View.extend({
 	},
 	request: function(){
 		var queryInput = $(this.el).find('#search').val();
-		$('#butt').prop({'disabled':'disabled'});
+		$('#butt').prop({'disabled':true});
 		console.log(queryInput);
 		console.log('submitted request');
 		query.set({input: queryInput});
@@ -138,6 +138,7 @@ var TwitterWidget = Backbone.View.extend({
 		var triggerPoint = 100;
 		if(!this.isLoading && this.el.scrollTop + this.el.clientHeight + triggerPoint > this.el.scrollHeight){
 			this.isLoading = true;
+			// spinner
 			loadingSpinner.show();
 			query.attributes.page += 1;
 			query.request();
