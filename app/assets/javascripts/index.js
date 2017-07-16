@@ -12,6 +12,7 @@ var tweets;
 // view
 var form;
 var viewList;
+var WindowView;
 
 
 $(document).ready(function(){
@@ -95,6 +96,7 @@ var TwitterWidget = Backbone.View.extend({
 	initialize: function(){
 		this.isLoading = false;
 		this.listenTo(this.collection,'reset',this.loadResults);
+		this.listenTo(windowView,'checkScroll',this.checkScroll);
 	},
 	render: function(){
 		this.loadResults();
@@ -102,9 +104,6 @@ var TwitterWidget = Backbone.View.extend({
 	loadResults: function(){
 		console.log("data appended to the template");
 		$(this.el).find('ul').append(this.template({tweets: this.collection.models}));
-	},
-	events:{
-		'scroll':'checkScroll'
 	},
 	checkScroll: function(){
 		console.log("scrolling.....................................................");
@@ -120,6 +119,10 @@ var TwitterWidget = Backbone.View.extend({
 
 viewList = new TwitterWidget();
 
+var WindowView = Backbone.View.extend({
+	el: 'html'
+});
+windowView = new WindowView();
 
 // Router---------------------------------------------------------------------------------
 console.log("end");
