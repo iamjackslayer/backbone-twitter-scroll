@@ -29,7 +29,7 @@ var Query = Backbone.Model.extend({
 	request: function(){
 		var that = this;
 		$.ajax({
-			url: 'https://nameless-spire-43337.herokuapp.com/static_pages/search/' + that.input + '/' + that.page,
+			url: 'https://nameless-spire-43337.herokuapp.com/static_pages/search/' + that.attributes.input + '/' + that.attributes.page,
 			type: 'get',
 			dataType: 'json',
 			success: function(resp){
