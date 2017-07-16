@@ -76,7 +76,7 @@ var Form = Backbone.View.extend({
 		console.log(queryInput);
 		console.log('submitted request');
 		query.set({input: queryInput});
-		query.page = 1;
+		query.attributes.page = 1;
 		query.request();
 	},
 	clearList: function(){
