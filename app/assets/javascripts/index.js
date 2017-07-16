@@ -120,7 +120,7 @@ var TwitterWidget = Backbone.View.extend({
 viewList = new TwitterWidget();
 
 var WindowView = Backbone.View.extend({
-	el: 'html'
+	el: 'window'
 });
 windowView = new WindowView();
 
