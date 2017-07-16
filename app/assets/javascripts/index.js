@@ -96,7 +96,7 @@ var TwitterWidget = Backbone.View.extend({
 	initialize: function(){
 		this.isLoading = false;
 		this.listenTo(this.collection,'reset',this.loadResults);
-		this.listenTo(windowView,'checkScroll',this.checkScroll);
+		this.listenTo(windowView,'scroll',this.checkScroll);
 	},
 	render: function(){
 		this.loadResults();
