@@ -13,7 +13,7 @@ var tweets;
 var form;
 var viewList;
 var windowView;
-
+var loadingSpinner;
 
 $(document).ready(function(){
 
@@ -61,6 +61,23 @@ tweets = new Tweets();
 
 
 // View ---------------------------------------------------------------------------------
+// loading-spinner
+
+var LoadingSpinner = Backbone.View.extend({
+	el:'#loading-spinner',
+	initialize: function(){
+		$(this.el).hide();
+	},
+	hide: function(){
+		$(this.el).hide();
+	},
+	show: function(){
+		$(this.el).show();
+	}
+
+});
+
+loadingSpinner = new LoadingSpinner();
 // form
 var Form = Backbone.View.extend({
 	el:'#inputForm',
@@ -121,7 +138,17 @@ var TwitterWidget = Backbone.View.extend({
 
 viewList = new TwitterWidget();
 
+// connecting loadingSpinner and viewLIst
+if(viewList.isLoading){
+	loadingSpinner.show();
+}else{
+	loadingSpinner.hide();
+}
+
 
 // Router---------------------------------------------------------------------------------
 console.log("end");
+
+
+
 });
