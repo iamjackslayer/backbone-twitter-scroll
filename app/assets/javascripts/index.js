@@ -12,7 +12,7 @@ var tweets;
 // view
 var form;
 var viewList;
-var WindowView;
+var windowView;
 
 
 $(document).ready(function(){
