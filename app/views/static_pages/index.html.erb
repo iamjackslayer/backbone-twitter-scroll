@@ -13,20 +13,20 @@
 	<div class="row">
 		<div class="twitter-widget col-md-12">
 			<a class="list-group-item list-group-item-action flex-column align-items-start">
-			
+
   			</a>
 		</div>
 	</div>
 </section>
 <script type="text/template" id="template">
-		{{ _.each(tweets.attributes,function(tweet){ }}
+		{{ _.each(tweets,function(tweet){ }}
 
 	 	<div class="d-flex w-100 justify-content-between">
-			<h5 class="mb-1">{{= tweet.name}}</h5>
-			 <small>{{= tweet.follower_count}}</small>
+			<h5 class="mb-1">{{= tweet.attributes.name}}</h5>
+			 <small>{{= tweet.attributes.follower_count}}</small>
 		</div>
-		<p class="mb-1">{{= tweet.description }}</p>
-		<small>{{= tweet.location}}</small>
+		<p class="mb-1">{{= tweet.attributes.description }}</p>
+		<small>{{= tweet.attributes.location}}</small>
 
 		{{ }) }}
 </script>
