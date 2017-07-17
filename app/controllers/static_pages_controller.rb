@@ -19,7 +19,7 @@ class StaticPagesController < ApplicationController
 
 		query = params[:query]
 		page  = params[:page]
-		@tweets = client.user_search(query)
+		@tweets = client.user_search(query, page: page,count: 5)
 
 		render json: @tweets
 	end
