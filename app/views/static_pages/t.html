@@ -58,7 +58,11 @@ This is a sample application part of of three-part tutorial showing how to build
 //   interpolate: /\{\{\=(.+?)\}\}/g,
 //   evaluate: /\{\{(.+?)\}\}/g
 // };
-    $('#here').append(_.template($('#template').html())({tweets:[{description: 'jack'},{description: 'jack'},{description: 'jack'},{description: 'jack'}]}))
+var arr = [];
+for(i=0;i<99;i++){
+    arr.push({description: 'jack'});
+}
+    $('#here').append(_.template($('#template').html())({tweets:arr}))
 </script>
 
 </body>
