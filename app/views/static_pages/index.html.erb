@@ -37,7 +37,7 @@
 		{{ _.each(tweets,function(tweet){ }}
 		<a class="list-group-item list-group-item-action flex-column align-items-start">
 
-			<img src="{{= tweets.attributes.profile_image_url_https}}" class="profile-pic img-rounded" alt="Cinque Terre" width="304" height="236">
+			<img src="{{= tweet.attributes.profile_image_url_https}}" class="profile-pic img-rounded" alt="Cinque Terre" width="304" height="236">
 		 	<div class="d-flex w-100 justify-content-between">
 				<h5 class="mb-1">{{= tweet.attributes.name}}</h5>
 				 <small>{{= tweet.attributes.followers_count}} followers</small>
