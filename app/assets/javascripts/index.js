@@ -106,7 +106,8 @@ var Form = Backbone.View.extend({
 		query.request();
 	},
 	clearList: function(){
-		$(viewList.el).html("");
+		$(viewList.el).find("a").remove();
+
 	},
 	test: function(){
 		console.log("test event activated");
