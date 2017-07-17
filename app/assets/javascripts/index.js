@@ -131,7 +131,7 @@ var TwitterWidget = Backbone.View.extend({
 	},
 	loadResults: function(){
 		console.log("data appended to the template");
-		$(this.el).append(this.template({tweets: this.collection.models}));
+		loadingSpinner.before(this.template({tweets: this.collection.models}));
 	},
 	checkScroll: function(){
 		console.log("scrolling.....................................................");
