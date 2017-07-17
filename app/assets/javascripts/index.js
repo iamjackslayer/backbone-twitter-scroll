@@ -122,7 +122,7 @@ var TwitterWidget = Backbone.View.extend({
 	initialize: function(){
 		this.isLoading = false;
 		this.listenTo(this.collection,'reset',this.loadResults);
-		$(document).on('scroll',function(){
+		$(this).on('scroll',function(){
 			this.checkScroll();
 		}.bind(this));
 	},
