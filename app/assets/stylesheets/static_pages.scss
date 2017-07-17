@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 header h1{
 	text-align: center;
+	size: 40px;
 }
 button[type=submit]{
 	&:hover{
@@ -11,7 +12,7 @@ button[type=submit]{
 }
 .twitter-widget{
 	overflow-y: scroll;
-	height: 400px;
+	height: 350px;
 
 	a{
 		img.profile-pic{
