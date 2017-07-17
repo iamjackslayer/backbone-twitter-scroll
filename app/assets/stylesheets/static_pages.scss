@@ -9,4 +9,13 @@ button[type=submit]{
 .twitter-widget{
 	overflow-y: scroll;
 	height: 400px;
+
+	a{
+		img.profile-pic{
+			float:left;
+		}
+		p{
+			clear: left;
+		}
+	}
 }
