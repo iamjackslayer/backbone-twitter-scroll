@@ -136,7 +136,7 @@ var TwitterWidget = Backbone.View.extend({
 	checkScroll: function(){
 		console.log("scrolling.....................................................");
 		var triggerPoint = 100;
-		if(!this.isLoading && $('body')[0].scrollTop + $(window)[0].innerHeight + triggerPoint > $('body')[0].scrollHeight{
+		if(!this.isLoading && $('body')[0].scrollTop + $(window)[0].innerHeight + triggerPoint > $('body')[0].scrollHeight){
 			console.log('adding data from scrolling,');
 			console.log('scrollTop: '+ this.el.scrollTop);
 			console.log('clientHeight: ' + this.el.clientHeight);
